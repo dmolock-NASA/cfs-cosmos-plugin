@@ -13,6 +13,7 @@ load_utility("<%= target_name %>/procedures/cfs_test_groups_for_cfs_lab_apps/cfs
 
 # Load the Open-Source cFS App Test Groups
 load_utility("<%= target_name %>/procedures/cfs_test_groups_for_cfs_open_src/cfs_cf.py")
+load_utility("<%= target_name %>/procedures/cfs_test_groups_for_cfs_open_src/cfs_cf_compat.py")
 load_utility("<%= target_name %>/procedures/cfs_test_groups_for_cfs_open_src/cfs_cs.py")
 load_utility("<%= target_name %>/procedures/cfs_test_groups_for_cfs_open_src/cfs_ds.py")
 load_utility("<%= target_name %>/procedures/cfs_test_groups_for_cfs_open_src/cfs_fm.py")
@@ -20,7 +21,6 @@ load_utility("<%= target_name %>/procedures/cfs_test_groups_for_cfs_open_src/cfs
 load_utility("<%= target_name %>/procedures/cfs_test_groups_for_cfs_open_src/cfs_hs.py")
 load_utility("<%= target_name %>/procedures/cfs_test_groups_for_cfs_open_src/cfs_lc.py")
 load_utility("<%= target_name %>/procedures/cfs_test_groups_for_cfs_open_src/cfs_md.py")
-load_utility("<%= target_name %>/procedures/cfs_test_groups_for_cfs_open_src/cfs_mm.py")
 load_utility("<%= target_name %>/procedures/cfs_test_groups_for_cfs_open_src/cfs_sample_app.py")
 load_utility("<%= target_name %>/procedures/cfs_test_groups_for_cfs_open_src/cfs_sc.py")
 
@@ -49,6 +49,7 @@ class cfs_test_suite(Suite):
       self.add_group(cfs_test_group_cfs_to_lab)
       # Load the Open-Source cFS App Test Groups
       self.add_group(cfs_test_group_cfs_cf)
+      self.add_group(cfs_test_group_cfs_cf_compat)
       self.add_group(cfs_test_group_cfs_cs)
       self.add_group(cfs_test_group_cfs_ds)
       self.add_group(cfs_test_group_cfs_fm)
@@ -56,7 +57,6 @@ class cfs_test_suite(Suite):
       self.add_group(cfs_test_group_cfs_hs)
       self.add_group(cfs_test_group_cfs_lc)
       self.add_group(cfs_test_group_cfs_md)
-      self.add_group(cfs_test_group_cfs_mm)
       self.add_group(cfs_test_group_cfs_sample_app)
       self.add_group(cfs_test_group_cfs_sc)
 
@@ -69,7 +69,7 @@ class cfs_test_suite(Suite):
       # Run before all groups when Suite Start is pressed
       Group.print(f"Starting FSW Integration Test Suite against the following target:")
       Group.print(f"cFS Target Name (target_name): <%= target_name %>")
-      
+
       # Send the command, TO_LAB_CMD_ENABLE_OUTPUT
       to_lab_dest_ip = "<%= global_tlm_output_ip %>"
       cmd(f"<%= target_name %> TO_LAB_CMD_ENABLE_OUTPUT with DEST_IP '{to_lab_dest_ip}'")

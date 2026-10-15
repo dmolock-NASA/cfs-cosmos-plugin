@@ -50,8 +50,8 @@ VERTICAL
   # here into multiple tabbooks
   <% 16.times do |tab_num| %>
   TABBOOK
-    <% 8.times do |perf_id_index| %>   
-    TABITEM "PerfID <%= perf_id_index + (8 * tab_num) %>" 
+    <% 8.times do |perf_id_index| %>
+    TABITEM "PerfID <%= perf_id_index + (8 * tab_num) %>"
       LABELVALUEDESC <%= target_name %> CFE_ES_HK PERF_FILTER_MASK_<%= perf_id_index + (8 * tab_num) %> "Filter Mask:"
       LABELVALUEDESC <%= target_name %> CFE_ES_HK PERF_TRIGGER_MASK_<%= perf_id_index + (8 * tab_num) %> "Trigger Mask:"
     END
@@ -72,8 +72,8 @@ HORIZONTAL
   VERTICALBOX
     VALUE <%= target_name %>  CFE_ES_HK PACKET_TIMEFORMATTED CONVERTED 23
     VALUE <%= target_name %>  CFE_ES_HK RECEIVED_TIMEFORMATTED CONVERTED 23
-    VALUE <%= target_name %>  CFE_ES_HK RECEIVED_COUNT 
-  END  
+    VALUE <%= target_name %>  CFE_ES_HK RECEIVED_COUNT
+  END
 END
 
 

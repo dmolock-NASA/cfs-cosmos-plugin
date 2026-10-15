@@ -205,6 +205,23 @@ $CFS_CMD_TLM_LIST = {
             "CF_CMD_PURGE_QUEUE",
             "CF_CMD_ENABLE_ENGINE",
             "CF_CMD_DISABLE_ENGINE",
+            "CF_CMD_RESET_COUNTERS_COMPAT",
+            "CF_CMD_TX_FILE_COMPAT",
+            "CF_CMD_PLAYBACK_DIR_COMPAT",
+            "CF_CMD_FREEZE_COMPAT",
+            "CF_CMD_THAW_COMPAT",
+            "CF_CMD_SUSPEND_COMPAT",
+            "CF_CMD_RESUME_COMPAT",
+            "CF_CMD_CANCEL_COMPAT",
+            "CF_CMD_ABANDON_COMPAT",
+            "CF_CMD_SET_PARAM_COMPAT",
+            "CF_CMD_GET_PARAM_COMPAT",
+            "CF_CMD_WRITE_QUEUE_COMPAT",
+            "CF_CMD_ENABLE_DEQUEUE_COMPAT",
+            "CF_CMD_DISABLE_DEQUEUE_COMPAT",
+            "CF_CMD_ENABLE_DIR_POLLING_COMPAT",
+            "CF_CMD_DISABLE_DIR_POLLING_COMPAT",
+            "CF_CMD_PURGE_QUEUE_COMPAT",
         ]
     ),
     "CF_SEND_HK_CMD" => FswMsgInfo.new(
@@ -283,31 +300,7 @@ $CFS_CMD_TLM_LIST = {
             "FM_SEND_HK_CMD",
         ]
     ),
-	"MM_CMD" => FswMsgInfo.new(
-        base_stream_id: 0x1888,
-        packet_names: [
-            "MM_CMD_NOOP",
-            "MM_CMD_RESET_COUNTERS",
-            "MM_CMD_PEEK",
-            "MM_CMD_POKE",
-            "MM_CMD_LOAD_MEM_WID",
-            "MM_CMD_LOAD_MEM_FROM_FILE",
-            "MM_CMD_DUMP_MEM_TO_FILE",
-            "MM_CMD_DUMP_IN_EVENT",
-            "MM_CMD_FILL_MEM",
-            "MM_CMD_LOOKUP_SYM",
-            "MM_CMD_SYM_TBL_TO_FILE",
-            "MM_CMD_EEPROM_WRITE_ENA",
-            "MM_CMD_EEPROM_WRITE_DIS",
-        ]
-    ),
-    "MM_SEND_HK_CMD" => FswMsgInfo.new(
-        base_stream_id: 0x1889,
-        packet_names: [
-            "MM_SEND_HK_CMD",
-        ]
-    ),
-    "MD_CMD" => FswMsgInfo.new(
+	"MD_CMD" => FswMsgInfo.new(
         base_stream_id: 0x1890,
         packet_names: [
             "MD_CMD_NOOP",
@@ -505,7 +498,7 @@ $CFS_CMD_TLM_LIST = {
         packet_names: [
             "TA_SEND_HK_CMD",
         ]
-    ),    
+    ),
 
     # -------------------------------------------------------------------------
     # Telemetry
@@ -696,12 +689,6 @@ $CFS_CMD_TLM_LIST = {
             "FM_MONITOR",
         ]
     ),
-	"MM_HK" => FswMsgInfo.new(
-        base_stream_id: 0x0887,
-        packet_names: [
-            "MM_HK",
-        ]
-    ),
 	"MD_HK" => FswMsgInfo.new(
         base_stream_id: 0x0890,
         packet_names: [
@@ -767,19 +754,19 @@ $CFS_CMD_TLM_LIST = {
         packet_names: [
             "CS_HK",
         ]
-    ),    
+    ),
     "LC_HK" => FswMsgInfo.new(
         base_stream_id: 0x08A7,
         packet_names: [
             "LC_HK",
         ]
-    ),    
+    ),
     "SC_HK" => FswMsgInfo.new(
         base_stream_id: 0x08AA,
         packet_names: [
             "SC_HK",
         ]
-    ),    
+    ),
 	"HS_HK" => FswMsgInfo.new(
         base_stream_id: 0x08AD,
         packet_names: [
@@ -803,7 +790,7 @@ $CFS_CMD_TLM_LIST = {
         packet_names: [
             "DS_COMP",
         ]
-    ),   
+    ),
     "TA_HK" => FswMsgInfo.new(
         base_stream_id: 0x080F,
         packet_names: [
